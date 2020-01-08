@@ -1,0 +1,2 @@
+# sbtcreate
+create some project
