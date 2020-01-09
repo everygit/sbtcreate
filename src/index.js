@@ -11,6 +11,7 @@ const inquirer = require('inquirer');
 
 const packageJson = require('../package.json');
 const projects = require('./projects');
+const createHandle = require('./create');
 
 const cmdName = packageJson.name;
 
@@ -23,8 +24,7 @@ program.command('create [project]')
     .description('create a project by project name')
     .option('-t, --type <type>', 'project type')
     .action((project, cmd) => {
-        console.log(project);
-        console.log(cmd.type)
+        createHandle(project, cmd);
     })
 
 program.command('ls')
