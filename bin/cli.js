@@ -10,4 +10,4 @@
  // 
 
 
-console.log("hello world");
+require('../src/index');
