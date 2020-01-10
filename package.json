@@ -1,6 +1,6 @@
 {
   "name": "sbtcreate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cli",
   "bin": {
     "sbtcreate": "./bin/cli.js"
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/everygit/sbtcreate#readme",
   "dependencies": {
+    "@xiaoerr/io": "^0.0.5",
     "colors": "^1.4.0",
     "commander": "^4.1.0",
     "inquirer": "^7.0.3"
