@@ -26,11 +26,18 @@ module.exports.isNotEmpty = {
 }
 
 module.exports.selectProjectType = {
-    type:'list',
-    message:'select project type',
-    name:'projectType',
+    type: 'list',
+    message: 'select project type',
+    name: 'projectType',
     choices: projects.map(m => m.name + " : " + m.desc),
-    filter: function(v) {
+    filter: function (v) {
         return v.split(' : ')[0]
     }
+}
+
+module.exports.emptyProjectName = {
+    type: 'input',
+    message: 'Enter page name',
+    'default': 'Test Page',
+    name: 'pageName'
 }

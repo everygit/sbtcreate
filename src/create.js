@@ -39,7 +39,14 @@ async function preprocessing(project, options) {
         if (isExist) {
             var answers = await inquirer.prompt([qustion.isExist]);
             if (answers.isRemove) {
-                rmdirsSync(s);
+                try {
+                    rmdirsSync(s);
+                } catch(ex) {
+                    console.log(`${s} remove fail`.red);
+                    console.log(ex.message);
+                    process.exit(1);
+                }
+                
                 mkdirsSync(s);
             } else if (!options.force) {
                 var answers = await inquirer.prompt([qustion.isOverwrite]);
@@ -56,7 +63,13 @@ async function preprocessing(project, options) {
             if (answers.isRemove) {
                 f.forEach(m => {
                     if(fs.statSync(m).isDirectory()){
-                        rmdirsSync(m)
+                        try {
+                            rmdirsSync(path.resolve(options._create_path, m))
+                        } catch(ex) {
+                            console.log(`${m} remove fail`.red)
+                            console.log(ex.message);
+                            process.exit(1)
+                        }
                     } else {
                         fs.unlinkSync(m);
                     }
