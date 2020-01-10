@@ -43,7 +43,7 @@ async function preprocessing(project, options) {
                     rmdirsSync(s);
                 } catch(ex) {
                     console.log(`${s} remove fail`.red);
-                    console.log(ex.message);
+                    console.log(ex.message.red);
                     process.exit(1);
                 }
                 
@@ -66,8 +66,8 @@ async function preprocessing(project, options) {
                         try {
                             rmdirsSync(path.resolve(options._create_path, m))
                         } catch(ex) {
-                            console.log(`${m} remove fail`.red)
-                            console.log(ex.message);
+                            console.log(`${path.resolve(options._create_path, m)} remove fail`.red)
+                            console.log(ex.message.red);
                             process.exit(1)
                         }
                     } else {

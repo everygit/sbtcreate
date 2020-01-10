@@ -6,14 +6,10 @@
  */
 
 const emptyHandle = require('./empty');
+const webpackHandle = require('./webpack');
 
 
 module.exports = {
     empty: emptyHandle,
-    jquery: async function () {
-        console.log(arguments);
-    },
-    webpack: async function () {
-        console.log(arguments);
-    }
+    webpack: webpackHandle
 }
