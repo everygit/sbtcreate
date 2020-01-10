@@ -8,24 +8,31 @@ var packageObj = {
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack-dev-server --open --config build_config/webpack.config.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "html-webpack-plugin": "^3.2.0",
         "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10",
         "webpack-dev-server": "^3.10.1"
     }
 }
 
 var config =
     `const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry:'./src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins:[new HtmlWebpackPlugin({
+        title:"测试"
+    })]
 }`;
 
 module.exports = async function (options) {
