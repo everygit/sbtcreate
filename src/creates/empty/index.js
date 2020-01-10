@@ -7,9 +7,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const { mkdirsSync } = require('@xiaoerr/io');
+const { mkdirsSync, cpdirsSync } = require('@xiaoerr/io');
 const htmlCreater = require('./resource/html');
 const cssStr = require('./resource/css');
+const jsStr = require('./resource/js');
 require('colors')
 
 // console.log(__dirname)
@@ -40,5 +41,10 @@ module.exports = async function (options) {
     fs.writeFileSync(path.resolve(options._create_path, 'css', 'base.css'), cssStr);
 
     mkdirsSync(path.resolve(options._create_path, 'js'));
+    fs.writeFileSync(path.resolve(options._create_path, 'js', 'base.js'), jsStr);
+
+    mkdirsSync(path.resolve(options._create_path, 'images'));
+    fs.copyFileSync(path.resolve(__dirname, 'resource', 'temp.jpeg'), path.resolve(options._create_path, 'images', 'temp.jpeg'));
+
     console.log('success!'.green);
 }

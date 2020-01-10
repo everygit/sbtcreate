@@ -11,6 +11,9 @@ body, ul, li, h1, h2, h3, h4, h5, dl, dt, dd {
     margin: 0;
     padding: 0;
 }
+ol, ul {
+    list-style: none;
+}
 `
 
 function fixed(num) {
