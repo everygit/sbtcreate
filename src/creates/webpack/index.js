@@ -29,7 +29,6 @@ module.exports = {
 }`;
 
 module.exports = async function (options) {
-    console.log("webpack")
     var p = path.resolve(options._create_path, 'package.json');
     fs.writeFileSync(p, JSON.stringify(packageObj, null, '\t'));
 
