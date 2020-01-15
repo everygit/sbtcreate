@@ -33,6 +33,7 @@ const last =
     <!--<script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.min.js"></script>-->
     <!--<script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>-->
     <!--<script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/zrender/4.1.1/zrender.min.js"></script>-->
     <script src="js/base.js"></script>`;
 
 module.exports = async function (options) {
