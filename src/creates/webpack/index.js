@@ -38,9 +38,10 @@ module.exports = {
 module.exports = async function (options) {
     var p = path.resolve(options._create_path, 'package.json');
     fs.writeFileSync(p, JSON.stringify(packageObj, null, '\t'));
-
     mkdirsSync(path.resolve(options._create_path, 'build_config'));
-
     fs.writeFileSync(path.resolve(options._create_path, 'build_config', 'webpack.config.js'), config);
+    var srcPath = path.resolve(options._create_path, 'src');
+    mkdirsSync(srcPath);
+    fs.writeFileSync(path.resolve(srcPath, 'index.js'), '// Please start your performance\r\n');
 
 }
